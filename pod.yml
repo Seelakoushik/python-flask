@@ -1,0 +1,28 @@
+# Kubernetes API Version
+apiVersion: v1
+
+# Resource Type
+kind: Pod
+
+# Pod Information
+metadata:
+  name: hospital-pod
+
+# Pod Specification
+spec:
+
+  # Container Information
+  containers:
+
+    # Container Name
+    - name: hospital-container
+
+      # Docker Image Name
+      image: ubuntu-hospital-web
+
+      # Use Local Docker Image
+      imagePullPolicy: Never
+
+      # Application Port
+      ports:
+        - containerPort: 5000
