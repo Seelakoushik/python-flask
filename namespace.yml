@@ -1,0 +1,11 @@
+# Kubernetes API Version
+apiVersion: v1
+
+# Resource Type
+kind: Namespace
+
+# Namespace Information
+metadata:
+
+  # Namespace Name
+  name: hospital-dev
