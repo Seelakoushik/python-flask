@@ -1,0 +1,33 @@
+# Kubernetes API Version
+apiVersion: v1
+
+# Resource Type
+kind: Service
+
+# Service Information
+metadata:
+
+  # Service Name
+  name: hospital-loadbalancer
+
+# Service Configuration
+spec:
+
+  # LoadBalancer Service
+  # Used in AWS/Azure/GCP
+  type: LoadBalancer
+
+  # Connect Service to Pods
+  selector:
+
+    # Pod Label
+    app: hospital-app
+
+  # Port Configuration
+  ports:
+
+    # Service Port
+    - port: 5000
+
+      # Pod Container Port
+      targetPort: 5000
