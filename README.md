@@ -70,9 +70,9 @@ installation of minicube
    
    13  minikube version
    
-   14  minikube start --driver=docker
+   14  
    
-   15  kubectl cluster-info
+   15  
    
    16  minikube start --driver=docker --force
    
