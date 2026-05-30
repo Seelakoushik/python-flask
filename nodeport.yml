@@ -1,0 +1,36 @@
+# Kubernetes API Version
+apiVersion: v1
+
+# Resource Type
+kind: Service
+
+# Service Information
+metadataiii:
+
+  # Service Name
+  name: hospital-nodeport
+
+# Service Configuration
+spec:
+
+  # NodePort Service
+  # Used for external browser access
+  type: NodePort
+
+  # Connect Service to Pods
+  selector:
+
+    # Pod Label
+    app: hospital-app
+
+  # Port Configuration
+  ports:
+
+    # Service Port
+    - port: 5000
+
+      # Pod Container Port
+      targetPort: 5000
+
+      # External Browser Port
+      nodePort: 30007
