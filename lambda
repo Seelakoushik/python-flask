@@ -1,0 +1,44 @@
+When you upload any file to S3, Lambda automatically runs and prints the uploaded file name.
+
+
+import json
+
+def lambda_handler(event, context):
+
+    # Get bucket name
+    bucket_name = event['Records'][0]['s3']['bucket']['name']
+
+    # Get uploaded file name
+    file_name = event['Records'][0]['s3']['object']['key']
+
+    print("Bucket Name:", bucket_name)
+    print("Uploaded File:", file_name)
+
+    return {
+        'statusCode': 200,
+        'body': json.dumps('S3 Event Triggered Successfully')
+    }
+
+
+
+Steps:
+Create S3 bucket
+Create Lambda function (Python 3.x)
+Paste above code
+In Lambda → Add Trigger
+Select S3
+Choose bucket
+Event type → PUT (Object Created)
+Test:
+
+
+Upload a file like:
+
+resume.pdf
+
+Go to CloudWatch Logs
+
+You’ll see:
+
+Bucket Name: my-bucket
+Uploaded File: resume.pdf
