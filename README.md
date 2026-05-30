@@ -57,15 +57,27 @@ docker volume rm myvolume
 installation of minicube
 
  7 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-    8  chmod +x kubectl
-    9  mv kubectl /usr/local/bin/
+ 
+  8  chmod +x kubectl
+    
+   9  mv kubectl /usr/local/bin/
+    
    10  kubectl version --client
+   
    11  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+   
    12  install minikube-linux-amd64 /usr/local/bin/minikube
+   
    13  minikube version
+   
    14  minikube start --driver=docker
+   
    15  kubectl cluster-info
+   
    16  minikube start --driver=docker --force
+   
    17  kubectl cluster-info
+   
    18  kubectl get nodes
+   
    19  eval $(minikube docker-env)
