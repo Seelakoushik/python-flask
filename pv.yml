@@ -1,0 +1,35 @@
+# Kubernetes API Version
+apiVersion: v1
+
+# Resource Type
+kind: PersistentVolume
+
+# Persistent Volume Information
+metadata:
+
+  # Persistent Volume Name
+  name: hospital-pv
+
+# Persistent Volume Configuration
+spec:
+
+  # Storage Capacity
+  capacity:
+
+    # Total Storage Size
+    storage: 1Gi
+
+  # Access Mode
+  accessModes:
+
+    # One Node can Read and Write
+    - ReadWriteOnce
+
+  # Storage Type
+  persistentVolumeReclaimPolicy: Retain
+
+  # Local Storage Path in Node
+  hostPath:
+
+    # Directory Path
+    path: "/data/hospital"
