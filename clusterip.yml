@@ -1,0 +1,32 @@
+# Kubernetes API Version
+apiVersion: v1
+
+# Resource Type
+kind: Service
+
+# Service Information
+metadata:
+
+  # Service Name
+  name: hospital-clusterip
+
+# Service Configuration
+spec:
+
+  # ClusterIP Service
+  # Internal communication only
+  type: ClusterIP
+
+  # Connect Service to Pods
+  # Pods having label app=hospital-app
+  selector:
+    app: hospital-app
+
+  # Port Configuration
+  ports:
+
+    # Service Port
+    - port: 5000
+
+      # Pod Container Port
+      targetPort: 5000
